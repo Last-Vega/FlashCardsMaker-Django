@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'register.apps.RegisterConfig',
+    'bootstrap4',           # django-bootstrap4
+
 ]
 
 MIDDLEWARE = [

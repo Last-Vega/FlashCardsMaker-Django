@@ -4,11 +4,11 @@
 <head>
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}"/>
   <body>
-    <h1>Dresser</h1>
+    <h1>FlashCardsMaker</h1>
     {% if user.id  %}
     <p>ログインしました．</p>
     <p>こんにちは，{{ user.username }}さん</p>
-    <a href="{% url 'accounts:profile' %}">マイページへ</a>
+    <a href="{% url 'register:word_list' %}">単語を登録する</a>
     <a href="{% url 'accounts:logout' %}">ログアウトする</a>
     {% else %}
     <a href="{% url 'accounts:login' %}">ログイン</a>
