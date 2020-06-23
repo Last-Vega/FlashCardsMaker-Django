@@ -13,10 +13,3 @@ class Flashcards(models.Model):
 
     def __str__(self):
         return self.words
-
-"""
-<td>
-<a href="{% url 'cms:book_mod' book_id=book.id %}" class="btn btn-outline-primary btn-sm">修正</a>
-<a href="{% url 'cms:book_del' book_id=book.id %}" class="btn btn-outline-danger btn-sm">削除</a>
-</td>
-"""
