@@ -13,10 +13,9 @@ def word_list(request):
 
 def flashcards_edit(request, word_id=None):
     """単語の編集"""
-    # return HttpResponse('書籍の編集')
-    if word_id:   # book_id が指定されている (修正時)
+    if word_id:
         flashcards = get_object_or_404(Flashcards, pk=word_id)
-    else:   # book_id が指定されていない (追加時)
+    else:
         flashcards = Flashcards()
 
     if request.method == 'POST':
@@ -26,14 +25,13 @@ def flashcards_edit(request, word_id=None):
             flashcards.save()
             return redirect('register:word_list')
     else:    # GET の時
-        form = FlashcardsForm(instance=flashcards)  # book インスタンスからフォームを作成
+        form = FlashcardsForm(instance=flashcards)
 
     return render(request, 'edit.html', dict(form=form, word_id=word_id))
 
 
 def flashcards_del(request, word_id):
     """単語の削除"""
-    # return HttpResponse('書籍の削除')
     flashcards = get_object_or_404(Flashcards, pk=word_id)
     flashcards.delete()
     return redirect('register:word_list')

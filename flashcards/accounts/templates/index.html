@@ -2,17 +2,21 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}"/>
+  <link rel="stylesheet" href="{% static 'accounts/css/bootstrap.min.css' %}">
   <body>
-    <h1>FlashCardsMaker</h1>
+    <h1 class="mt-4 border-bottom">FlashCardsMaker</h1>
     {% if user.id  %}
     <p>ログインしました．</p>
     <p>こんにちは，{{ user.username }}さん</p>
-    <a href="{% url 'register:word_list' %}">単語を登録する</a>
-    <a href="{% url 'accounts:logout' %}">ログアウトする</a>
+    <a href="{% url 'register:word_list' %}" class="btn btn-outline-primary btn-sm">単語を登録する</a>
+    <form action="{% url 'retrieval:retrieval_list' %}" method="get">
+        <input name="query" type="text">
+        <button type="submit">検索する</button>
+    </form>
+    <a href="{% url 'accounts:logout' %}" class="btn btn-outline-primary btn-sm">ログアウトする</a>
     {% else %}
-    <a href="{% url 'accounts:login' %}">ログイン</a>
-    <a href="{% url 'accounts:create_account' %}">アカウント作成</a>
+    <a href="{% url 'accounts:login' %}" class="btn btn-outline-primary btn-sm">ログイン</a>
+    <a href="{% url 'accounts:create_account' %}" class="btn btn-outline-primary btn-sm">アカウント作成</a>
     {% endif %}
   </body>
 </html>
