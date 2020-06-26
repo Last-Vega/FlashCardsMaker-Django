@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}単語の一覧{% endblock title %}
+
+{% block content %}
+    <h4  class="mt-4 border-bottom">結果一覧</h4>
+
+        {% for asnwer in answer_words %}
+          answer
+        {% endfor %}
+    <a href="{% url 'accounts:index' %}" class="btn btn-primary btn-sm my-3">トップに戻る</a>
+{% endblock content %}
