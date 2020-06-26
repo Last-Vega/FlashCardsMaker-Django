@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'register.apps.RegisterConfig',
     'bootstrap4',           # django-bootstrap4
     'retrieval.apps.RetrievalConfig',
+    'learning.apps.LearningConfig',
+
 
 ]
 
