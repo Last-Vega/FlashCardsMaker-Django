@@ -9,6 +9,7 @@
     <p>ログインしました．</p>
     <p>こんにちは，{{ user.username }}さん</p>
     <a href="{% url 'register:word_list' %}" class="btn btn-outline-primary btn-sm">単語を登録する</a>
+    <a href="{% url 'learning:learning_list' %}" class="btn btn-outline-primary btn-sm">テストする</a>
     <form action="{% url 'retrieval:retrieval_list' %}" method="get">
         <input name="query" type="text">
         <button type="submit">検索する</button>
