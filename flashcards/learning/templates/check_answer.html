@@ -3,9 +3,33 @@
 
 {% block content %}
     <h4  class="mt-4 border-bottom">結果一覧</h4>
-
-        {% for asnwer in answer_words %}
-          answer
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">単語</th>
+          <th scope="col">品詞</th>
+          <th scope="col">正解</th>
+          <th scope="col">あなたの回答</th>
+          <th scope="col">正誤判定</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for index in temp_list %}
+        <tr>
+          <th scope="row">{{ index.flashcards.id }}</th>
+          <td>{{ index.flashcards.words }}</td>
+          <td>{{ index.flashcards.part_of_speech }}</td>
+          <td>{{ index.flashcards.synonym }}</td>
+          <td>{{ index.answer_words }}</td>
+          {% if index.flashcards.synonym == index.answer_words %}
+            <td>正解！</td>
+          {% else %}
+            <td>不正解；；</td>
+          {% endif %}
+        </tr>
         {% endfor %}
+      </tbody>
+    </table>
     <a href="{% url 'accounts:index' %}" class="btn btn-primary btn-sm my-3">トップに戻る</a>
 {% endblock content %}

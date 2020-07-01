@@ -8,7 +8,9 @@
     {% if user.id  %}
     <p>ログインしました．</p>
     <p>こんにちは，{{ user.username }}さん</p>
-    <a href="{% url 'register:word_list' %}" class="btn btn-outline-primary btn-sm">単語を登録する</a>
+    <a href="{% url 'register:word_list' %}" class="btn btn-outline-primary btn-sm">
+      <img src="https://base-ec2.akamaized.net/images/item/origin/93883b4aad8cfba6914e6e5890628084.png" width="150" height="200">
+      単語を登録する</a>
     <a href="{% url 'learning:learning_list' %}" class="btn btn-outline-primary btn-sm">テストする</a>
     <form action="{% url 'retrieval:retrieval_list' %}" method="get">
         <input name="query" type="text">
