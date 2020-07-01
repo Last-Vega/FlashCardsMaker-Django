@@ -3,7 +3,9 @@
 
 {% block content %}
     <h4  class="mt-4 border-bottom">単語一覧</h4>
-    <form action="{% url 'learning:check_answer' %}" method="get">
+    <form action="{% url 'learning:check_answer' %}" method="post">
+      {{ form }}
+      {% csrf_token %}
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
