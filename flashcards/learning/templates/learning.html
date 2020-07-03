@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% block title %}単語の一覧{% endblock title %}
+{% block title %}単語のテスト{% endblock title %}
 
 {% block content %}
-    <h4  class="mt-4 border-bottom">単語一覧</h4>
+    <h4  class="mt-4 border-bottom">類義語を答えてください</h4>
     <form action="{% url 'learning:check_answer' %}" method="post">
       {{ form }}
       {% csrf_token %}
